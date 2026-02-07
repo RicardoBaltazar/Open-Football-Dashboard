@@ -89,16 +89,18 @@ O Open Football Dashboard é construído seguindo boas práticas arquiteturais d
 
 ## Desenvolvimento
 
-Este projeto utiliza SQLite para desenvolvimento local, mas pode ser facilmente configurado para PostgreSQL editando o arquivo `.env`:
+Este projeto utiliza **PostgreSQL** como banco de dados principal. A configuração do banco está definida no arquivo `.env`:
 
 ```env
 DB_CONNECTION=pgsql
 DB_HOST=pgsql
 DB_PORT=5432
-DB_DATABASE=football_dashboard
+DB_DATABASE=laravel
 DB_USERNAME=sail
 DB_PASSWORD=password
 ```
+
+O PostgreSQL roda automaticamente via Docker quando você executa `./vendor/bin/sail up -d`.
 
 ## Contribuições
 
