@@ -9,6 +9,7 @@ O Open Football Dashboard é construído seguindo boas práticas arquiteturais d
 ### Tecnologias Principais
 
 - **Laravel 12+** - Framework PHP
+- **Laravel Octane + Swoole** - Servidor HTTP de alta performance
 - **Filament** - Interface administrativa
 - **PostgreSQL** - Banco de dados principal
 - **Redis** - Cache e filas
@@ -85,6 +86,10 @@ O Open Football Dashboard é construído seguindo boas práticas arquiteturais d
 
 # Executar testes
 ./vendor/bin/sail test
+
+# Comandos específicos do Octane
+./vendor/bin/sail artisan octane:status    # Verificar status do servidor
+./vendor/bin/sail artisan octane:reload   # Recarregar aplicação (se necessário)
 ```
 
 ## Desenvolvimento
@@ -98,9 +103,10 @@ DB_PORT=5432
 DB_DATABASE=laravel
 DB_USERNAME=sail
 DB_PASSWORD=password
+OCTANE_SERVER=swoole
 ```
 
-O PostgreSQL roda automaticamente via Docker quando você executa `./vendor/bin/sail up -d`.
+Tudo roda automaticamente via Docker quando você executa `./vendor/bin/sail up -d`.
 
 ## Contribuições
 
